@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.admin_home.*
@@ -58,5 +59,7 @@ class Admin_Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
                     .commit()
             }
         }
+        drawerLayout.closeDrawer(GravityCompat.START)
+        return true
     }
 }
