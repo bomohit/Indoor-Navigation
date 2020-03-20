@@ -62,4 +62,14 @@ class Admin_Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
+
+    override fun onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START)
+        }
+        else {
+            super.onBackPressed()
+        }
+    }
+
 }
