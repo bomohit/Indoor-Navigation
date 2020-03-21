@@ -50,7 +50,7 @@ class Admin_Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         // now create our related fragment
         when (menuItem.itemId) {
-            R.id.home ->  {
+            R.id.store_details ->  {
                 storeDetailsFragment = StoreDetailsFragment()
                 supportFragmentManager
                     .beginTransaction()

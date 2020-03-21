@@ -1,5 +1,6 @@
 package com.example.p_navadmin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log.d
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
 
                         if (username.equals(iUsername) && password.equals(iPassword)) {
                             textView.setText(iUsername)
+                            startActivity(Intent(this, Admin_Home::class.java))
                         }
                         else {
                             textView.setText("Username or Password is wrong!")
