@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@drawable/store_retailer_login"
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/buttonPublicUse"
+    <EditText
+        android:id="@+id/inputUsernameSR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
-        android:text="@string/public_use"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonStoreRetailer"
+    <EditText
+        android:id="@+id/inputPasswordSR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/store_retailer"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPublicUse" />
+        app:layout_constraintTop_toBottomOf="@+id/inputUsernameSR" />
 
     <Button
-        android:id="@+id/buttonAdministrator"
+        android:id="@+id/buttonLoginSR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/administrator"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonStoreRetailer" />
-
+        android:text="@string/sign_in"
+        app:layout_constraintTop_toBottomOf="@+id/inputPasswordSR"
+        tools:layout_editor_absoluteX="153dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

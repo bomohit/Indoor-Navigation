@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".Admin_Home"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Login_Admin" />
     </application>
 
 </manifest>
