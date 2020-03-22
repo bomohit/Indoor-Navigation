@@ -15,12 +15,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // administrator
         buttonAdministrator.setOnClickListener {
             startActivity(Intent(this, Login_Admin::class.java))
         }
 
+        // store retailer
         buttonStoreRetailer.setOnClickListener {
             startActivity(Intent(this, Login_ShopRetailer::class.java))
+        }
+
+        // public use
+        buttonPublicUse.setOnClickListener {
+            startActivity(Intent(this, Public_use::class.java))
         }
     }
 }
