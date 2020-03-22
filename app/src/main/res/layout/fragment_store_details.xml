@@ -32,7 +32,7 @@
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button3" />
+            app:layout_constraintTop_toBottomOf="@+id/buttonSearch" />
 
         <EditText
             android:id="@+id/update_lot_no"
@@ -46,7 +46,7 @@
             app:layout_constraintTop_toBottomOf="@+id/update_new_store_name" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/updateCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -59,7 +59,7 @@
             tools:layout_editor_absoluteY="181dp" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/buttonSearch"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:text="@string/search"
@@ -67,6 +67,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/search_current_store" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/buttonUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:clickable="true"
+            android:src="@drawable/ic_done_black_24dp"
+            app:backgroundTint="#371CB4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

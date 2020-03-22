@@ -1,7 +1,9 @@
 package com.example.p_navadmin
 
 import android.os.Bundle
+import android.util.Log.d
 import android.view.MenuItem
+import android.widget.Button
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -9,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.admin_home.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.fragment_store_details.*
 
 class Admin_Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
