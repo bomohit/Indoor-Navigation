@@ -20,6 +20,7 @@
         <activity android:name=".Admin_Home"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Login_Admin" />
+        <activity android:name=".Login_ShopRetailer" />
     </application>
 
 </manifest>

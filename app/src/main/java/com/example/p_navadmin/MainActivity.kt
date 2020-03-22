@@ -18,5 +18,9 @@ class MainActivity : AppCompatActivity() {
         buttonAdministrator.setOnClickListener {
             startActivity(Intent(this, Login_Admin::class.java))
         }
+
+        buttonStoreRetailer.setOnClickListener {
+            startActivity(Intent(this, Login_ShopRetailer::class.java))
+        }
     }
 }
