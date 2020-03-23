@@ -16,6 +16,7 @@ import kotlinx.android.synthetic.main.fragment_store_details.*
 class Admin_Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var storeDetailsFragment: StoreDetailsFragment
+    lateinit var adminVerifyListFragment: AdminVerifyListFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,6 +59,15 @@ class Admin_Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
                 supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.frame_layout, storeDetailsFragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+            }
+
+            R.id.verify_list -> {
+                adminVerifyListFragment = AdminVerifyListFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, adminVerifyListFragment)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                     .commit()
             }
