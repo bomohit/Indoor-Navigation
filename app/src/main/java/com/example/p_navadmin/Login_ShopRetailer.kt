@@ -32,10 +32,15 @@ class Login_ShopRetailer : AppCompatActivity() {
                         val iPasswordSR = inputPasswordSR.text.toString()
 
                         if (usernameSR.equals(iUsernameSR) && passwordSR.equals(iPasswordSR)) {
-                            startActivity(Intent(this, Shop_Retailer_Promotion_Event::class.java))
+
+                            val intent = Intent(this, Shop_Retailer_Promotion_Event::class.java)
+                            intent.putExtra("store", usernameSR)
+                            startActivity(intent)
+//                            startActivity(Intent(this, Shop_Retailer_Promotion_Event::class.java))
                         }
                         else {
                             // if false
+
                         }
                     }
                     .addOnFailureListener { e ->
