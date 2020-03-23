@@ -22,10 +22,13 @@
             android:name=".Admin_Home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Login_Admin" />
-        <activity android:name=".Login_ShopRetailer" />
+        <activity
+            android:name=".Login_ShopRetailer"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Public_use"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Shop_Retailer_Promotion_Event" />
     </application>
 
 </manifest>
