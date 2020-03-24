@@ -1,4 +1,4 @@
-package com.example.p_navadmin
+package com.example.p_navadmin.Admin
 
 
 import android.os.Bundle
@@ -8,12 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import com.example.p_navadmin.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.getField
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_store_details.*
 import kotlinx.android.synthetic.main.fragment_store_details.view.*
 
 /**
@@ -36,7 +35,7 @@ class StoreDetailsFragment : Fragment() {
         val btnSearch = root.findViewById<Button>(R.id.buttonSearch)
         val btnUpdate = root.findViewById<FloatingActionButton>(R.id.buttonUpdate)
 
-        // button search pressed
+        // button search pressed (SEARCH)
         btnSearch.setOnClickListener {
             val storeName = root.search_current_store.text.toString().toLowerCase()
             d("firebase", "just click ${storeName}")

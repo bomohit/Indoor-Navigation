@@ -1,4 +1,4 @@
-package com.example.p_navadmin
+package com.example.p_navadmin.Admin
 
 data class EventList(
     val store: String

@@ -1,8 +1,9 @@
-package com.example.p_navadmin
+package com.example.p_navadmin.StoreRetailer
 
 import android.os.Bundle
 import android.util.Log.d
 import androidx.appcompat.app.AppCompatActivity
+import com.example.p_navadmin.R
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.shop_retailer_promotion.*

@@ -1,9 +1,10 @@
-package com.example.p_navadmin
+package com.example.p_navadmin.StoreRetailer
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log.d
 import androidx.appcompat.app.AppCompatActivity
+import com.example.p_navadmin.R
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.getField
 import com.google.firebase.ktx.Firebase

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StoreDetailsFragment">
+    tools:context=".Admin.StoreDetailsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,9 +13,12 @@
 
         <EditText
             android:id="@+id/search_current_store"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="100dp"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
             android:ems="10"
             android:hint="Search current store"
             android:inputType="textPersonName"
@@ -25,8 +28,12 @@
 
         <EditText
             android:id="@+id/update_new_store_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
             android:ems="10"
             android:hint="Update new store name"
             android:inputType="textPersonName"
@@ -36,8 +43,12 @@
 
         <EditText
             android:id="@+id/update_lot_no"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
             android:ems="10"
             android:hint="Update lot no"
             android:inputType="textPersonName"
@@ -47,21 +58,27 @@
 
         <EditText
             android:id="@+id/updateCategory"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
             android:ems="10"
             android:hint="Category"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/update_lot_no"
-            tools:layout_editor_absoluteX="107dp"
-            tools:layout_editor_absoluteY="181dp" />
+            app:layout_constraintTop_toBottomOf="@id/update_lot_no" />
 
         <Button
             android:id="@+id/buttonSearch"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="35dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
             android:text="@string/search"
             android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"

@@ -19,16 +19,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Admin_Home"
+            android:name=".Admin.Admin_Home"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Login_Admin" />
+        <activity android:name=".Admin.Login_Admin"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".Login_ShopRetailer"
+            android:name=".StoreRetailer.Login_ShopRetailer"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Public_use"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Shop_Retailer_Promotion_Event" />
+        <activity android:name=".StoreRetailer.Shop_Retailer_Promotion_Event" />
+        <activity android:name=".Admin.AdminConfirmation"
+            android:label=""/>
     </application>
 
 </manifest>

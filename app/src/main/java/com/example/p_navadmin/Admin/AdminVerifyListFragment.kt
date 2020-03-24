@@ -1,4 +1,4 @@
-package com.example.p_navadmin
+package com.example.p_navadmin.Admin
 
 
 import android.os.Bundle
@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.p_navadmin.R
+import com.example.p_navadmin.VerifyListAdapter
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
