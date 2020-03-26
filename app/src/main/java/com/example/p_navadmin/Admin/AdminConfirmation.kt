@@ -2,6 +2,7 @@ package com.example.p_navadmin.Admin
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.util.Log.d
 import androidx.appcompat.app.AppCompatActivity
 import com.example.p_navadmin.R
@@ -21,26 +22,33 @@ class AdminConfirmation : AppCompatActivity() {
         // give accesss firestore
         val db = Firebase.firestore
 
+        var description = ""
+        var start = ""
+        var end = ""
+        var title = ""
+        var imageName = ""
+        var url = ""
+
         db.collection("Confirmation Event").document("$store")
             .get()
             .addOnSuccessListener { result ->
                 d("firebase", "field is : ${result.getField<String>("description")}")
-                val description = result.getField<String>("description")
-                val start = result.getField<String>("start")
-                val end = result.getField<String>("end")
-                val title = result.getField<String>("title")
+                description = result.getField<String>("description").toString()
+                start = result.getField<String>("start").toString()
+                end = result.getField<String>("end").toString()
+                title = result.getField<String>("title").toString()
+                imageName = result.getField<String>("image name").toString()
+                url = result.getField<String>("url").toString()
 
+                confirmationImageName.text = imageName
                 confirmationTitle.text = title
                 confirmationStart.text = start
                 confirmationEnd.text = end
                 confirmationDescription.text = description
+                confirmationDescription.movementMethod = ScrollingMovementMethod()
             }
 
         confirmFloat.setOnClickListener {
-            val title = confirmationTitle.text.toString()
-            val start = confirmationStart.text.toString()
-            val end = confirmationEnd.text.toString()
-            val description = confirmationDescription.text.toString()
 
             if (title.isNotEmpty() && start.isNotEmpty() && end.isNotEmpty() && description.isNotEmpty()) {
                 // send to the event db
@@ -48,7 +56,10 @@ class AdminConfirmation : AppCompatActivity() {
                     "title" to "$title",
                     "start" to "$start",
                     "end" to "$end",
-                    "description" to "$description"
+                    "description" to "$description",
+                    "image name" to "$imageName",
+                    "url" to "$url"
+
                 )
 
                 db.collection("Event").document("$store")
