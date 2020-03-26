@@ -36,10 +36,10 @@ class PromotionFragment : Fragment() {
             .addOnSuccessListener { result ->
                 for (document in result) {
                     d("firebase", "success : ${document.id} url : ${document.getField<String>("url")}")
-//
+                    val store = document.id
                     val title = document.getField<String>("title")
                     val url = document.getField<String>("url")
-                    eventList.add(Event("$title", "$url"))
+                    eventList.add(Event("$store", "$title", "$url"))
                 }
 
                 // setup recycler view

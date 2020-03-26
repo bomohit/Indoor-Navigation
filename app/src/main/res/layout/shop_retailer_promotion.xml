@@ -14,7 +14,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
         android:text="@string/browse"
-        app:layout_constraintEnd_toStartOf="@id/imageName"
+        app:layout_constraintEnd_toStartOf="@id/descriptionImage"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,10 +33,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageName" />
+        app:layout_constraintTop_toBottomOf="@+id/descriptionImage" />
 
     <TextView
-        android:id="@+id/imageName"
+        android:id="@+id/descriptionImage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

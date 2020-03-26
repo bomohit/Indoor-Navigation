@@ -154,7 +154,7 @@ class Shop_Retailer_Promotion_Event : AppCompatActivity() {
 //            d("faris", "path : $path")
 //            d("faris", "path : $pa")
             d("faris", "path : $imgName")
-            imageName.text = pa
+            descriptionImage.text = pa
 
         }
     }
