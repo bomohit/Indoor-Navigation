@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 import com.example.p_navadmin.R
 import com.google.firebase.firestore.ktx.firestore
@@ -31,6 +32,8 @@ class UserFeedbackFragment : Fragment() {
 
         val ratingList = mutableListOf<RatingList>()
 
+        val recyclerViewFeedback = root.findViewById<RecyclerView>(R.id.recyclerViewFeedback)
+
         //get the rate list
         db.collection("Rating")
             .get()
@@ -41,12 +44,21 @@ class UserFeedbackFragment : Fragment() {
                     d("faris", "$uid and $rate")
                     ratingList.add(RatingList("$uid", "$rate"))
                 }
+                recyclerViewFeedback.apply {
+                    layoutManager = LinearLayoutManager(this@UserFeedbackFragment.requireContext())
+                    adapter = FeedbackListAdapter(ratingList)
+                }
+                d("faris", "${ratingList.size}")
             }
+            .addOnFailureListener { e ->
+                d("faris", "error ",e)
+            }
+//        for (i in 0..5) {
+//            ratingList.add(RatingList("faris", "4.0"))
+//        }
+        d("faris", "${ratingList.size}")
 
-        root.recyclerViewFeedback.apply {
-            layoutManager = LinearLayoutManager(this@UserFeedbackFragment.requireContext())
-            adapter = FeedbackList(ratingList)
-        }
+
 
 
         return root

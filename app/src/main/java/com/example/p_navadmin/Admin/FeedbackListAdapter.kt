@@ -1,5 +1,6 @@
 package com.example.p_navadmin.Admin
 
+import android.util.Log.d
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.p_navadmin.R
 import kotlinx.android.synthetic.main.feedback_list.view.*
 
-class FeedbackList(private val ratingList: MutableList<RatingList>) : RecyclerView.Adapter<FeedbackList.ViewHolder>() {
+class FeedbackListAdapter(private val ratingList: MutableList<RatingList>) : RecyclerView.Adapter<FeedbackListAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val uid: TextView = itemView.uid_name
         val rating_bar: RatingBar = itemView.ratingBar2
@@ -23,6 +24,7 @@ class FeedbackList(private val ratingList: MutableList<RatingList>) : RecyclerVi
     override fun getItemCount() = ratingList.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        d("faris", "onBind")
         holder.uid.text =ratingList[position].uid
         holder.rating_bar.rating = ratingList[position].rate.toFloat()
     }
