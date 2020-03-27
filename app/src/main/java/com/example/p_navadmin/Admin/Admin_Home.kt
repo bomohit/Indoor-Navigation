@@ -15,6 +15,7 @@ class Admin_Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
 
     lateinit var storeDetailsFragment: StoreDetailsFragment
     lateinit var adminVerifyListFragment: AdminVerifyListFragment
+//    lateinit var userFeedbackFragment: UserFeedbackFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,6 +73,15 @@ class Admin_Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                     .commit()
             }
+//            R.id.user_feedback -> {
+//                userFeedbackFragment =
+//                    UserFeedbackFragment()
+//                supportFragmentManager
+//                    .beginTransaction()
+//                    .replace(R.id.frame_layout, userFeedbackFragment)
+//                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+//                    .commit()
+//            }
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true

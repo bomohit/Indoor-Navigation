@@ -18,6 +18,11 @@
             android:title="Verify List"
             android:icon="@drawable/ic_action_name"
             />
+        <item
+            android:id="@+id/user_feedback"
+            android:title="User Feedback"
+            android:icon="@drawable/ic_action_name"
+            />
 
     </group>
 
