@@ -79,6 +79,14 @@ class PublicMain : AppCompatActivity(), NavigationView.OnNavigationItemSelectedL
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                     .commit()
             }
+            R.id.indoorNavigation -> {
+                indoorNavigationFragment = IndoorNavigationFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, indoorNavigationFragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+            }
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
