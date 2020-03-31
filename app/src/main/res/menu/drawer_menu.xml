@@ -26,14 +26,5 @@
 
     </group>
 
-    <item android:title="Controls">
-        <menu>
-            <item
-                android:id="@+id/logout"
-                android:title="Logout"
-                android:icon="@drawable/ic_action_name"
-                />
-        </menu>
-    </item>
 
 </menu>
