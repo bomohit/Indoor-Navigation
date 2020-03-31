@@ -4,13 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/main_page"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/buttonPublicUse"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="150dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
         android:text="@string/public_use"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,8 +22,12 @@
 
     <Button
         android:id="@+id/buttonStoreRetailer"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
         android:text="@string/store_retailer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,8 +35,12 @@
 
     <Button
         android:id="@+id/buttonAdministrator"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
         android:text="@string/administrator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
