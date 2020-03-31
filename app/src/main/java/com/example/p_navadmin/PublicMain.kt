@@ -25,6 +25,7 @@ class PublicMain : AppCompatActivity(), NavigationView.OnNavigationItemSelectedL
 
         setSupportActionBar(toolbar)
         val actionBar = supportActionBar
+        actionBar?.title = "Home"
 
         val drawerToggle: ActionBarDrawerToggle = object  : ActionBarDrawerToggle (
             this,
@@ -53,9 +54,28 @@ class PublicMain : AppCompatActivity(), NavigationView.OnNavigationItemSelectedL
     }
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
+
+        fun burgerbar(tajuk: String) {
+
+            setSupportActionBar(toolbar)
+            val actionBar = supportActionBar
+            actionBar?.title = tajuk
+
+            val drawerToggle: ActionBarDrawerToggle = object  : ActionBarDrawerToggle (
+                this,
+                drawerLayout,
+                toolbar,
+                (R.string.open),
+                (R.string.close)
+            ) {
+
+            }
+
+        }
         // now create fragment
         when (menuItem.itemId) {
             R.id.home -> {
+                burgerbar("Home")
                 homeFragment = HomeFragment()
                 supportFragmentManager
                     .beginTransaction()
@@ -64,6 +84,7 @@ class PublicMain : AppCompatActivity(), NavigationView.OnNavigationItemSelectedL
                     .commit()
             }
             R.id.promotion -> {
+                burgerbar("Promotion and Event")
                 promotionFragment = PromotionFragment()
                 supportFragmentManager
                     .beginTransaction()
@@ -72,6 +93,7 @@ class PublicMain : AppCompatActivity(), NavigationView.OnNavigationItemSelectedL
                     .commit()
             }
             R.id.feedback ->  {
+                burgerbar("Feedback")
                 feedbackFragment = FeedbackFragment()
                 supportFragmentManager
                     .beginTransaction()
@@ -80,10 +102,20 @@ class PublicMain : AppCompatActivity(), NavigationView.OnNavigationItemSelectedL
                     .commit()
             }
             R.id.indoorNavigation -> {
+                burgerbar("Indoor Navigation")
                 indoorNavigationFragment = IndoorNavigationFragment()
                 supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.frame_layout, indoorNavigationFragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+            }
+            R.id.storeDirectory -> {
+                burgerbar("Store Directory list")
+                storeDirectoryFragment = StoreDirectoryFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, storeDirectoryFragment)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                     .commit()
             }
