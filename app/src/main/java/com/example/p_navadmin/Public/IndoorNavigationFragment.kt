@@ -79,6 +79,10 @@ class IndoorNavigationFragment : Fragment(), AdapterView.OnItemSelectedListener 
 
         // default call
         getlist(floor)
+        // show image on photoview
+        val imgName = "main_image"
+        val id = resources.getIdentifier(imgName, "drawable", context?.packageName)
+        photoView.setImageResource(id)
 
         buttonG.setOnClickListener {
             // change floor to m
@@ -94,7 +98,7 @@ class IndoorNavigationFragment : Fragment(), AdapterView.OnItemSelectedListener 
             getlist(floor)
 
             // show image on photoview
-            val imgName = "main_image"
+            val imgName = "g_floor"
             val id = resources.getIdentifier(imgName, "drawable", context?.packageName)
             photoView.setImageResource(id)
 
@@ -113,6 +117,11 @@ class IndoorNavigationFragment : Fragment(), AdapterView.OnItemSelectedListener 
             // recall the floor spinner
             getlist(floor)
 
+            // show image on photoview
+            val imgName = "m_floor"
+            val id = resources.getIdentifier(imgName, "drawable", context?.packageName)
+            photoView.setImageResource(id)
+
         }
 
         button1.setOnClickListener {
@@ -127,6 +136,11 @@ class IndoorNavigationFragment : Fragment(), AdapterView.OnItemSelectedListener 
 
             // recall the floor spinner
             getlist(floor)
+
+            // show image on photoview
+            val imgName = "f_floor"
+            val id = resources.getIdentifier(imgName, "drawable", context?.packageName)
+            photoView.setImageResource(id)
 
         }
 
@@ -143,6 +157,11 @@ class IndoorNavigationFragment : Fragment(), AdapterView.OnItemSelectedListener 
             // recall the floor spinner
             getlist(floor)
 
+            // show image on photoview
+            val imgName = "s_floor"
+            val id = resources.getIdentifier(imgName, "drawable", context?.packageName)
+            photoView.setImageResource(id)
+
         }
 
         button3.setOnClickListener {
@@ -157,6 +176,11 @@ class IndoorNavigationFragment : Fragment(), AdapterView.OnItemSelectedListener 
 
             // recall the floor spinner
             getlist(floor)
+
+            // show image on photoview
+            val imgName = "t_floor"
+            val id = resources.getIdentifier(imgName, "drawable", context?.packageName)
+            photoView.setImageResource(id)
 
         }
 
@@ -189,6 +213,11 @@ class IndoorNavigationFragment : Fragment(), AdapterView.OnItemSelectedListener 
                                 navMap = fromS+"_"+toS
                                 d("spinner", " 1 : $navMap")
 
+                                // show image on photoview
+                                val imgName = navMap
+                                val id = resources.getIdentifier(imgName, "drawable", context?.packageName)
+                                photoView.setImageResource(id)
+
                             }
 
                     }
@@ -212,6 +241,10 @@ class IndoorNavigationFragment : Fragment(), AdapterView.OnItemSelectedListener 
                                 val toS = result.getField<String>("lot")
                                 navMap = fromS+"_"+toS
                                 d("spinner2", " 1 : $navMap")
+
+                                val imgName = navMap
+                                val id = resources.getIdentifier(imgName, "drawable", context?.packageName)
+                                photoView.setImageResource(id)
 
                             }
 
