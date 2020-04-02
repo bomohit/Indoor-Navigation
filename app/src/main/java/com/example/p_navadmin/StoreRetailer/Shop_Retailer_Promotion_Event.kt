@@ -21,6 +21,13 @@ class Shop_Retailer_Promotion_Event : AppCompatActivity() {
         private val PERMISSION_PICK_IMAGE = 1000
     }
 
+    val storage = Firebase.storage
+    // Create a storage reference from our app
+    var storageRef = storage.reference
+    // Create a child reference
+    // imagesRef now points to "images"
+    var imagesRef: StorageReference? = storageRef.child("images")
+
     internal var filePath: Uri? = null
     var imgName = ""
 
@@ -31,12 +38,7 @@ class Shop_Retailer_Promotion_Event : AppCompatActivity() {
         // connect to firestore
         val db = Firebase.firestore
 
-        val storage = Firebase.storage
-        // Create a storage reference from our app
-        var storageRef = storage.reference
-        // Create a child reference
-        // imagesRef now points to "images"
-        var imagesRef: StorageReference? = storageRef.child("images")
+
 
         // get passed store name from login
         val store = intent.getStringExtra("store")
@@ -55,15 +57,15 @@ class Shop_Retailer_Promotion_Event : AppCompatActivity() {
         buttonBrowse.setOnClickListener {
             val intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type = "image/*"
-            startActivityForResult(Intent.createChooser(intent, "Select Image"), PERMISSION_PICK_IMAGE)
+            startActivityForResult(Intent.createChooser(intent, "select image"), PERMISSION_PICK_IMAGE)
             d("firebase", "browse")
         }
 
         // get the start date
         inputStart.setOnClickListener {
             val date = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { datePicker, mYear, mMonth, mDay ->
-                inputStart.text = "$mDay/$mMonth/$mYear"
-                input_Start = "$mDay/$mMonth/$mYear"
+                inputStart.text = "$mDay/${mMonth + 1}/$mYear"
+                input_Start = "$mDay/${mMonth + 1}/$mYear"
             }, year, month, day)
 
             date.show()
@@ -72,8 +74,8 @@ class Shop_Retailer_Promotion_Event : AppCompatActivity() {
 //        get the end date
             inputEnd.setOnClickListener {
                 val date = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { datePicker, mYear, mMonth, mDay ->
-                    inputEnd.text = "$mDay/$mMonth/$mYear"
-                    input_End = "$mDay/$mMonth/$mYear"
+                    inputEnd.text = "$mDay/${mMonth + 1}/$mYear"
+                    input_End = "$mDay/${mMonth + 1}/$mYear"
                 }, year, month, day)
 
                 date.show()
@@ -122,7 +124,13 @@ class Shop_Retailer_Promotion_Event : AppCompatActivity() {
                                 .set(upEvent)
                                 .addOnSuccessListener { result ->
                                     d("firebase", "Successfully add new data")
-                                    startActivity(Intent(this, Shop_Retailer_Promotion_Event::class.java))
+//                                    startActivity(Intent(this, Shop_Retailer_Promotion_Event::class.java))
+
+                                    val intent = Intent(this, Shop_Retailer_Promotion_Event::class.java)
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or
+                                            Intent.FLAG_ACTIVITY_NEW_TASK)
+                                    startActivity(intent)
+
                                 }
                                 .addOnFailureListener { e ->
                                     d("firebase", "error ", e)
@@ -139,7 +147,7 @@ class Shop_Retailer_Promotion_Event : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == PERMISSION_PICK_IMAGE) {
-            d("faris", "$data")
+            d("firebase", "$data")
 //            d("faris", " ${resultCode}")
 //            d("faris", " ${requestCode}")
 
@@ -153,7 +161,7 @@ class Shop_Retailer_Promotion_Event : AppCompatActivity() {
 //            d("faris", "path : $fileName")
 //            d("faris", "path : $path")
 //            d("faris", "path : $pa")
-            d("faris", "path : $imgName")
+            d("firebase", "path : $imgName")
             descriptionImage.text = pa
 
         }

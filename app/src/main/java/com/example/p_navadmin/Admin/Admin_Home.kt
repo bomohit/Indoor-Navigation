@@ -9,7 +9,10 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.p_navadmin.R
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.admin_home.*
+import kotlinx.android.synthetic.main.admin_home.drawerLayout
+import kotlinx.android.synthetic.main.admin_home.nav_view
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.public_main.*
 
 class Admin_Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -21,6 +24,8 @@ class Admin_Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
         super.onCreate(savedInstanceState)
         setContentView(R.layout.admin_home)
         setSupportActionBar(toolbar)
+        val actionbar = supportActionBar
+        actionbar?.title = "Store Details"
 
         val drawerToggle: ActionBarDrawerToggle = object : ActionBarDrawerToggle (
             this,
@@ -52,9 +57,28 @@ class Admin_Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
     }
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
+
+        fun burgerbar(tajuk: String) {
+
+            setSupportActionBar(toolbar)
+            val actionBar = supportActionBar
+            actionBar?.title = tajuk
+
+            val drawerToggle: ActionBarDrawerToggle = object : ActionBarDrawerToggle (
+                this,
+                drawerLayout,
+                toolbar,
+                (R.string.open),
+                (R.string.close)
+            ) {
+
+            }
+
+        }
         // now create our related fragment
         when (menuItem.itemId) {
             R.id.store_details ->  {
+                burgerbar("Store Details")
                 storeDetailsFragment =
                     StoreDetailsFragment()
                 supportFragmentManager
@@ -65,6 +89,7 @@ class Admin_Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
             }
 
             R.id.verify_list -> {
+                burgerbar("Verify List")
                 adminVerifyListFragment =
                     AdminVerifyListFragment()
                 supportFragmentManager
@@ -74,6 +99,7 @@ class Admin_Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
                     .commit()
             }
             R.id.user_feedback -> {
+                burgerbar("User Feedback")
                 userFeedbackFragment =
                     UserFeedbackFragment()
                 supportFragmentManager

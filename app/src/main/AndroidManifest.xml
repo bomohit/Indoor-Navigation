@@ -32,10 +32,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".StoreRetailer.Shop_Retailer_Promotion_Event"
             android:label="Promotion and Event"
-            android:noHistory="true"/>
+            />
         <activity
             android:name=".Admin.AdminConfirmation"
-            android:label="" />
+            android:label="Verify"
+            android:noHistory="true"/>
         <activity
             android:name=".PublicMain"
             android:theme="@style/AppTheme.NoActionBar" />

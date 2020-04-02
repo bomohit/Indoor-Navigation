@@ -13,7 +13,6 @@ import kotlinx.android.synthetic.main.public_main.*
 
 class PublicMain : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    lateinit var homeFragment: HomeFragment
     lateinit var indoorNavigationFragment: IndoorNavigationFragment
     lateinit var storeDirectoryFragment: StoreDirectoryFragment
     lateinit var promotionFragment: PromotionFragment
@@ -25,7 +24,7 @@ class PublicMain : AppCompatActivity(), NavigationView.OnNavigationItemSelectedL
 
         setSupportActionBar(toolbar)
         val actionBar = supportActionBar
-        actionBar?.title = "Home"
+        actionBar?.title = "Indoor Navigation"
 
         val drawerToggle: ActionBarDrawerToggle = object  : ActionBarDrawerToggle (
             this,
@@ -44,10 +43,10 @@ class PublicMain : AppCompatActivity(), NavigationView.OnNavigationItemSelectedL
         nav_view.setNavigationItemSelectedListener(this)
 
         //default fragment
-        homeFragment = HomeFragment()
+        indoorNavigationFragment = IndoorNavigationFragment()
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.frame_layout, homeFragment)
+            .replace(R.id.frame_layout, indoorNavigationFragment)
             .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
             .commit()
         //
@@ -74,15 +73,7 @@ class PublicMain : AppCompatActivity(), NavigationView.OnNavigationItemSelectedL
         }
         // now create fragment
         when (menuItem.itemId) {
-            R.id.home -> {
-                burgerbar("Home")
-                homeFragment = HomeFragment()
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.frame_layout, homeFragment)
-                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                    .commit()
-            }
+
             R.id.promotion -> {
                 burgerbar("Promotion and Event")
                 promotionFragment = PromotionFragment()

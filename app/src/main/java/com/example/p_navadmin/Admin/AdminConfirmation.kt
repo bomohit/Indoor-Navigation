@@ -76,7 +76,13 @@ class AdminConfirmation : AppCompatActivity() {
                     .delete()
                     .addOnSuccessListener { result ->
                         d("firebase", "deleted")
-                        startActivity(Intent(this, Admin_Home::class.java))
+//                        startActivity(Intent(this, Admin_Home::class.java))
+
+                        val intent = Intent(this, Admin_Home::class.java)
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or
+                                Intent.FLAG_ACTIVITY_NEW_TASK)
+                        startActivity(intent)
+                        finish() // finish the current activity
                     }
                     .addOnFailureListener { e ->
                         d("firebase", "error ", e)
@@ -91,7 +97,12 @@ class AdminConfirmation : AppCompatActivity() {
                 .addOnSuccessListener { result ->
                     d("firebase", "deleted")
 
-                    startActivity(Intent(this, Admin_Home::class.java))
+//                    startActivity(Intent(this, Admin_Home::class.java))
+                    val intent = Intent(this, Admin_Home::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or
+                            Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intent)
+                    finish() // finish the current activity
 
                 }
                 .addOnFailureListener { e ->
